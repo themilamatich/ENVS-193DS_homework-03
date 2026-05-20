@@ -199,16 +199,24 @@ ggplot(data = my_data_clean2, # selecting the data frame
   geom_line(data = my_data_preds, # data from predicted data set 
             aes(x = x, # x = x in the data set
                 y = predicted)) + # y = y in the data set
-  # relabel x- and y-axes, legend title
+  # relabel x- and y-axes, legend title (still want title?)
   labs(x = "Daily High Temperature (°F)",
        y = "Daily Step Count",
-       title = "Daily Step Counts Vary with the Daily High Temperature") +
+       title = "Daily Step Counts Vary with the Daily High Temperature",
+       subtitle = "2026-05-20") +
   # custom themes
   theme_light()
 ```
 
-
 ### b. Captions
+
+#### Caption for "Number of Steps Taken differs on Weekday vs. Weekend"
+
+**Figure 1. Number of steps taken differs on Weekday versus weekend.** Small circular points represent the total number of steps recorded on given weekday (yellow points) or weekend (blue points) from 2026-04-21 to 2026-05-20. Box plots represent median number of steps taken. The box itself represents the interquartile range, the horizontal line in the center represents the median number of steps taken on each day type, and the whiskers extend to the 1.5 x the IQR, and the whiskers extend to the 1.5 x the IQR, while anything outside that range is an outlier. Data collected by Mila Matich from 2026-04-21 to 2026-05-20.
+
+#### Caption for "Daily Step Counts Vary with the Daily High Temperature"
+
+**Figure 2. Daily step count slightly varies (or weekly correlated?) with the Daily High Temperature.** Red dots represents the number of steps taken under a certain daily high temperature. Pink ribbon represents the 95% confidence interval, and the black line represents the line of best fit. Data collected by Mila Matich from 2026-04-21 to 2026-05-20
 
 ## Problem 3. Affective visualization
 
