@@ -1,0 +1,29 @@
+---
+title: "homework-03"
+author: "Mila Matich"
+date: 2026-05-28
+format: pdf
+---
+
+# Part 1. Homework Set Up
+
+```{r}
+#| label: loading-in-packages-and-data
+#| message: FALSE
+
+
+# loading in packages
+library(tidyverse) # loading in tidyverse 
+library(janitor) # loading in janitor 
+library(readxl) # loading in readxl
+
+# reading in and storing data as object "kelp 
+kelp <- read_csv("temp-kelp.csv")
+```
+
+
+
+
+
+
+
