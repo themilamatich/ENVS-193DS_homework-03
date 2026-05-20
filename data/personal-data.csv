@@ -1,0 +1,30 @@
+Date ,Weekday or Weekend,Step Count,High Temperature (ºF),Low Temperature (ºF),Precipitation (in),Physical Health ,Stress Levels,Amount of Homework 
+2026-04-21,Weekday,"5,056",60,48,0.48,Healthy ,High ,Large
+2026-04-22,Weekday,"12,767",67,52,0,Healthy ,Medium ,Large 
+2026-04-23,Weekday,"8,514",70,53,0,Healthy ,Low ,Medium 
+2026-04-24,Weekday ,"7,304",69,50,0,Healthy,Low,Low
+2026-04-25,Weekend,"11,316",63,50,0.05,Healthy ,Low ,Medium 
+2026-04-26,Weekend,"19,732",64,47,0,Healthy ,Low ,Low 
+2026-04-27,Weekday ,"12,174",68,45,0,Healthy ,Low,Medium 
+2026-04-28,Weekday ,"8,335",64,50,0,Healthy ,Low,Medium 
+2026-04-29,Weekday ,"5,227",67,52,0,Healthy ,Low ,Large
+2026-04-30,Weekday ,"7,085",65,58,0,Healthy ,Medium ,Medium 
+2026-05-01,Weekday,8877,66,54,0,Healthy ,Medium,Medium
+2026-05-02,Weekend,12510,64,55,0,Healthy ,Medium,Medium
+2026-05-03,Weekend,8129,62,55,0,Healthy ,low,low
+2026-05-04,Weekday ,5320,62,50,0,Healthy ,Medium ,Medium 
+2026-05-05,Weekday ,"12,078",64,53,0,Healthy ,Medium ,Medium 
+2026-05-06,Weekday ,11621,64,52,0,Healthy ,Medium ,Low 
+2026-05-07,Weekday ,10997,65,54,0,Healthy ,Medium,Low
+2026-05-08,Weekday,6005,59,54,0,Healthy,Low,Low
+2026-05-09,Weekend,7392,63,54,0,Healthy,Low ,Low 
+2026-05-10,Weekend,6640,64,54,0,Healthy ,Medium ,Medium 
+2026-05-11,Weekday ,10142,60,54,0,Healthy,Low,Medium
+2026-05-12,Weekday ,9261,60,54,0,Healthy,High,Medium
+2026-05-13,Weekday ,"9,651",61,54,0,Healthy ,Low ,Medium 
+2026-05-14,Weekday ,10699,65,52,0,Healthy ,Low ,Low
+2026-05-15,Weekday,15571,64,51,0,Healthy ,Low ,Low
+2026-05-16,Weekend,18181,67,50,0,Healthy ,Low ,Low
+2026-05-17,Weekend,17150,66,54,0,Healthy ,Low ,Low
+2026-05-18,Weekday ,8665,74,50,0,Healthy,Low,Low 
+2026-05-19,Weekday ,5745,73,56,0,Healthy ,Low,Medium 
