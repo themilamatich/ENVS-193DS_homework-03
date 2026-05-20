@@ -99,9 +99,11 @@ cor.test(kelp$kelp_elong, kelp$temp_c,
 
 ### d. Results communication
 
-To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson’s product-moment correlation because the data meets the assumptions of normality (as shown by the QQ residuals plot), we are observing a linear relationship between two continuous variables, and there are independent observations. We found a moderate negative relationship between conductivity and water elevation (Pearson’s r = -0.688, 95% CI [ -0.8359665, -0.4460157], t(30) = -5.189, p < 0.001, ⍺ = 0.05).
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson’s product-moment correlation because the data meets the assumptions of normality (as shown by the QQ residuals plot), we are observing a linear relationship between two continuous variables, and there are independent observations. We found a moderate negative relationship between ocean temperature and Giant Kelp Frond elongation rate (Pearson’s r = -0.688, 95% CI [ -0.8359665, -0.4460157], t(30) = -5.189, p < 0.001, ⍺ = 0.05).
 
 ### e. Test implications
+
+Our tests suggest that as ocean temperature increases, the growth rate of Giant Kelp decreases. In regards to Giant Kelp health and prosperity, it is important to continue to monitor these postulation in order to determine if temperature is affecting anything else, other than their growth rate. Such research is extremely important due to tising global teperatures in our oceans, and we must work towards accomodating these species who are negatively affected by the rising ocean temperatures. 
 
 ### f. f. Double check your own work.
 
