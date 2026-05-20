@@ -78,6 +78,26 @@ ggplot(data = kelp, # data from kelp data set
 
 ### c. Check your assumptions and run your test
 
+#### Checking Assumptions
+```{r}
+#| label: checking-assumptions
+# base  r residuals plots required to check the assumptions 
+par(mfrow = c(2,2))
+plot(kelp_model)
+```
+My tests check the assumptions of fitting a linear model using the Residuals Vs Fitted, Q-Q Residuals, Scale-Location and Residuals vs. Leverage plots to test the homoscedasticity of residuals, the normality of the residuals, and the influence of outliers on the model. Based on the model, the residuals roughly fit the line on the QQ plot, with a small tails on the edge, however the majority of residuals lie upon the line allowing me to conclude that they are nationally distributed. Lastly, residuals are homoscedastic, as they are randomly distributed in both the Scale-location and Residuals vs Fitted graphs, and outliers do not storngly affect the model, as seen by the lack of major outliers on th resisudals vs. leverage plot. 
+
+#### Running the Test 
+```{r}
+#| label: running-pearsons
+
+# running a correlation test 
+# formula: (data frame$response, data frame$predictor)
+cor.test(kelp$kelp_elong, kelp$temp_c, 
+         method = "pearson") # type of test: pearson (normal residuals from QQ)
+```
+
+
 ### d. Results communication
 
 ### e. Test implications
