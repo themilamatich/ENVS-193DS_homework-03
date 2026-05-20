@@ -29,6 +29,8 @@ personal <- read_csv("") # data/ in order to direct the file path
 
 ### a. An appropriate test
 
+In our study, we are trying to measure the strength of the relationship between two variables (ocean temperature and giant kelp frond elongation rate). In order to test the strength of this relationship, we should use a Pearson’s product-moment correlation and a Spearman’s rank correlation. Pearson's correlation test is the parametric version of the test, while Spearman's rank correlation is the non-parametric version that measures the correlation between ranks (rather than continuous variables).
+
 ### b. Create a visualization
 
 ### c. Check your assumptions and run your test
