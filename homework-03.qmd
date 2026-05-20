@@ -16,6 +16,7 @@ format: pdf
 library(tidyverse) # loading in tidyverse 
 library(janitor) # loading in janitor 
 library(readxl) # loading in readxl
+library(ggeffects) # loading in ggeffects 
 
 # reading in and storing data as object "kelp"
 kelp <- read_csv("data/temp-kelp.csv") # data/ in order to direct the file path 
@@ -32,6 +33,48 @@ personal <- read_csv("") # data/ in order to direct the file path
 In our study, we are trying to measure the strength of the relationship between two variables (ocean temperature and giant kelp frond elongation rate). In order to test the strength of this relationship, we should use a Pearson’s product-moment correlation and a Spearman’s rank correlation. Pearson's correlation test is the parametric version of the test, while Spearman's rank correlation is the non-parametric version that measures the correlation between ranks (rather than continuous variables).
 
 ### b. Create a visualization
+
+```{r}
+#| label: generating-linear-regression-model 
+# fitting the linear model to generate the ribbon + linear line 
+kelp_model <- lm(
+  kelp_elong ~ temp_c, # formula: kelp growth rate as a function of temp
+  data = kelp) # data from the kelp data set 
+
+# generating predictor values for the linear model + ribbon 
+kelp_preds <- ggpredict(
+  kelp_model,        # model object
+  terms = "temp_c")  # predictor (in quotation marks)
+
+# generating the visualization
+# base layer: ggplot 
+ggplot(data = kelp, # data from kelp data set
+       mapping = aes(x = temp_c, # x-axis = temp 
+                     y = kelp_elong)) + # y-axis = growth rate 
+  # first layer: geom_point 
+  geom_point(size = 3,# changing point size 
+             fill = "darkgreen", # adding data points in the color green
+             shape = 21) + # point shape = circles 
+  # second layer: ribbon representing confidence interval
+  # using predictions data frame
+  geom_ribbon(data = kelp_preds, # data from predicted data set 
+              aes(x = x, # x = x in the data set
+                  y = predicted, # y = y in the data set
+                  ymin = conf.low, # min y point on ribbon set by CI
+                  ymax = conf.high), # max y point on ribbon set by CI
+                  alpha = 0.1, # opaqueness of the ribbon
+                  fill = "green") + # changing ribbon color 
+  # third layer: line representing model predictions
+  # using predictions data frame
+  geom_line(data = kelp_preds, # data from predicted data set 
+            aes(x = x, # x = x in the data set
+                y = predicted)) + # y = y in the data set
+  # labeling x- and y-axes 
+  labs(x = "Temperature (°C)", # x = "Temperature (°C)"
+       y = "Giant Kelp Frond Elongation Rate (cm~day^{-1})") + # y = elongation rate
+  # changing theme to be different than he default 
+  theme_minimal()
+```
 
 ### c. Check your assumptions and run your test
 
