@@ -17,10 +17,55 @@ library(tidyverse) # loading in tidyverse
 library(janitor) # loading in janitor 
 library(readxl) # loading in readxl
 
-# reading in and storing data as object "kelp 
-kelp <- read_csv("temp-kelp.csv")
+# reading in and storing data as object "kelp"
+kelp <- read_csv("data/temp-kelp.csv") # data/ in order to direct the file path 
+# reading in and storing personal data as object "personal"
+personal <- read_csv("") # data/ in order to direct the file path 
 ```
 
+# Part 2. Problems 
+
+## Problem 1. Giant kelp fronds
+
+### a. An appropriate test
+
+### b. Create a visualization
+
+### c. Check your assumptions and run your test
+
+### d. Results communication
+
+### e. Test implications
+
+### f. f. Double check your own work.
+
+## Problem 2. Personal data
+
+### a. Updating your visualizations
+
+### b. Captions
+
+## Problem 3. Affective visualization
+
+### a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences).
+
+### b. Create a sketch (on paper) of your idea.
+
+### c. Make a draft of your visualization.
+
+### d. Write an artist statement.
+
+### e. Prep your materials to share in class.
+
+## Problem 4. Statistical critique
+
+### a. Revisit and summarize
+
+### b. Visual clarity
+
+### c. Aesthetic clarity
+
+### d. Recommendations
 
 
 
