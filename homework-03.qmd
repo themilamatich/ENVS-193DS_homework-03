@@ -21,7 +21,7 @@ library(ggeffects) # loading in ggeffects
 # reading in and storing data as object "kelp"
 kelp <- read_csv("data/temp-kelp.csv") # data/ in order to direct the file path 
 # reading in and storing personal data as object "personal"
-personal <- read_csv("") # data/ in order to direct the file path 
+my_data <- read_csv("data/personal-data.csv") # data/ in order to direct the file path 
 ```
 
 # Part 2. Problems 
@@ -118,10 +118,95 @@ cor.test(kelp$kelp_elong, kelp$temp_c,
 
 The two tests would have led me to the same conclusion, which was to reject the null hypothesis and infer that there is a moderate negative correlation between ocean temperature and Giant Kelp Frond elongation rate (Spearman $\rho$ = -0.689, S = 9216.1, p < 0.001, $\alpha$ = 0.05). Despite gathering the same conclusion and results, the two tests are different in what they are comparing. The Pearson’s product-moment correlation compares continuous variables and is the parametric version of a correlation test and a Spearman’s rank correlation compares ranks and is the non-parametric version of a correlation test. 
 
-
 ## Problem 2. Personal data
 
 ### a. Updating your visualizations
+
+#### Weekend vs. Weekday Step Count Plot 
+
+```{r}
+#| label: visualizing-day-end-steps
+
+# cleaning data first 
+my_data_clean <- my_data |> 
+  # cleaning column names 
+  clean_names() |> 
+  select(weekday_or_weekend,  #selecting 1st column of interest
+         step_count) # selecting next column of interest
+  
+# base layer: ggplot 
+ggplot(data = my_data_clean, 
+       mapping = aes(x = weekday_or_weekend, # x-axis = category (weekend/day)
+                     y = step_count, # y-axis is step count
+                     color = weekday_or_weekend)) + # assign category colors 
+  # first layer: boxplot
+  geom_boxplot() +
+  # second layer: jitter plot
+  geom_jitter(height = 0, # making sure points don't move along y-axis
+              width = 0.2) + # narrowing width of jitter
+  # labeling x-axis, y-axis, and adding a title
+  labs(x = "Weekday or Weekend", 
+       y = "Daily Step Count", 
+       title = "Number of Steps Taken differs on Weekday vs. Weekend") +   
+  # changing the theme to differ from default 
+  theme_minimal() + 
+  # assigning colors based on category 
+  scale_color_manual(values = c("Weekday" = "#FFD166", 
+                                "Weekend" = "lightblue")) + 
+  # removing the legend
+  theme(legend.position = "none")
+
+```
+
+#### Daily High Temperature vs. Step Count 
+```{r}
+#| label: another-plot 
+# cleaning data first 
+my_data_clean2 <- my_data |> 
+  clean_names() |> # cleaning column names
+  select(step_count, #selecting 1st column of interest
+         high_temperature_o_f) # selecting next column of interest
+
+# fitting the linear model to generate the ribbon + linear line 
+my_data_model <- lm(
+  step_count ~ high_temperature_o_f, # formula: step count as a function of temp
+  data = my_data_clean2) # data from the kelp data set 
+
+# generating predictor values for the linear model + ribbon 
+my_data_preds <- ggpredict(
+  my_data_model,     # model object
+  terms = "high_temperature_o_f")  # predictor (in quotation marks)
+
+# generating the plot 
+ggplot(data = my_data_clean2, # selecting the data frame
+       mapping = aes(x = high_temperature_o_f, # x-axis is step count
+                     y = step_count, # y-axis is the day's high temperature
+                     )) +  
+  # first layer: geom_point
+  geom_point(color = "#E84855", # adding colored visual data points
+             size = 3) + # increaisng size of point 
+  # second layer: ribbon representing confidence interval
+  # using predictions data frame
+  geom_ribbon(data = my_data_preds, # data from predicted data set 
+              aes(x = x, # x = x in the data set
+                  y = predicted, # y = y in the data set
+                  ymin = conf.low, # min y point on ribbon set by CI
+                  ymax = conf.high), # max y point on ribbon set by CI
+                  alpha = 0.1, # opaqueness of the ribbon
+                  fill = "pink3") + # changing ribbon color 
+  # third layer: line representing model predictions
+  # using predictions data frame
+  geom_line(data = my_data_preds, # data from predicted data set 
+            aes(x = x, # x = x in the data set
+                y = predicted)) + # y = y in the data set
+  # relabel x- and y-axes, legend title
+  labs(x = "Daily High Temperature (°F)",
+       y = "Daily Step Count",
+       title = "Daily Step Counts Vary with the Daily High Temperature") +
+  # custom themes
+  theme_light()
+```
+
 
 ### b. Captions
 
