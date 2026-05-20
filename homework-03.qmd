@@ -97,8 +97,9 @@ cor.test(kelp$kelp_elong, kelp$temp_c,
          method = "pearson") # type of test: pearson (normal residuals from QQ)
 ```
 
-
 ### d. Results communication
+
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson’s product-moment correlation because the data meets the assumptions of normality (as shown by the QQ residuals plot), we are observing a linear relationship between two continuous variables, and there are independent observations. We found a moderate negative relationship between conductivity and water elevation (Pearson’s r = -0.688, 95% CI [ -0.8359665, -0.4460157], t(30) = -5.189, p < 0.001, ⍺ = 0.05).
 
 ### e. Test implications
 
