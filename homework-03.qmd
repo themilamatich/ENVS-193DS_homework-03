@@ -227,6 +227,8 @@ The author is addressing the relative importance of differing coral species in f
 
 ### b. Visual clarity
 
+The authors visually represent their statistics through their y-axis labels which clearly indicates that the bars represent the mean abundance or richness +/- the standard error (which is also shown in the figure with error bars overlapping the bars). These labels are in logical positions, and teh graph does not show any underlying data or model predictions. Additionally, they show the results of the statistical tests using A.B,C, which denotes whether there is statistical difference between groups (which was determined by the ANOVA they ran). Bars with shared letters indicate no significant difference in both plots, while bars without shared letters indicate a significant difference in the variable described on the y-axis. 
+
 ### c. Aesthetic clarity
 
 ### d. Recommendations
