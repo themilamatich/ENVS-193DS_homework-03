@@ -78,7 +78,7 @@ ggplot(data = kelp, # data from kelp data set
 
 ### c. Check your assumptions and run your test
 
-#### Checking Assumptions
+#### Checking Assumptions (ask)
 ```{r}
 #| label: checking-assumptions
 # base  r residuals plots required to check the assumptions 
@@ -226,7 +226,7 @@ For my personal data, an effective visualization could be a mountain and hills c
 
 ### b. Create a sketch (on paper) of your idea.
 
-** do I do one or like does it have to be ??? just one ! 
+![](visual-draft.png)
 
 ### c. Make a draft of your visualization.
 

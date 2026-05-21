@@ -3,7 +3,7 @@ This is a repo for my ENVS 193DS Homework 3
 
 ## General Information 
 
-This repo is for my ENVS 193DS Homework 3 Submission. It provides exampels of fitting linear models, working and visualizing personal data and analyzing scientific communication technqiues in papers. 
+This repo is for my ENVS 193DS Homework 3 Submission. It provides examples of fitting linear models, working and visualizing personal data and analyzing scientific communication techniques in papers. 
 
 ## Data and File Information 
 
