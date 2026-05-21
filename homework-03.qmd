@@ -36,15 +36,6 @@ In our study, we are trying to measure the strength of the relationship between 
 
 ```{r}
 #| label: generating-linear-regression-model 
-# fitting the linear model to generate the ribbon + linear line 
-kelp_model <- lm(
-  kelp_elong ~ temp_c, # formula: kelp growth rate as a function of temp
-  data = kelp) # data from the kelp data set 
-
-# generating predictor values for the linear model + ribbon 
-kelp_preds <- ggpredict(
-  kelp_model,        # model object
-  terms = "temp_c")  # predictor (in quotation marks)
 
 # generating the visualization
 # base layer: ggplot 
@@ -55,20 +46,6 @@ ggplot(data = kelp, # data from kelp data set
   geom_point(size = 3,# changing point size 
              fill = "darkgreen", # adding data points in the color green
              shape = 21) + # point shape = circles 
-  # second layer: ribbon representing confidence interval
-  # using predictions data frame
-  geom_ribbon(data = kelp_preds, # data from predicted data set 
-              aes(x = x, # x = x in the data set
-                  y = predicted, # y = y in the data set
-                  ymin = conf.low, # min y point on ribbon set by CI
-                  ymax = conf.high), # max y point on ribbon set by CI
-                  alpha = 0.1, # opaqueness of the ribbon
-                  fill = "green") + # changing ribbon color 
-  # third layer: line representing model predictions
-  # using predictions data frame
-  geom_line(data = kelp_preds, # data from predicted data set 
-            aes(x = x, # x = x in the data set
-                y = predicted)) + # y = y in the data set
   # labeling x- and y-axes 
   labs(x = "Temperature (°C)", # x = "Temperature (°C)"
        y = "Giant Kelp Frond Elongation Rate (cm~day^{-1})") + # y = grow rate
@@ -78,14 +55,19 @@ ggplot(data = kelp, # data from kelp data set
 
 ### c. Check your assumptions and run your test
 
-#### Checking Assumptions (ask)
+#### Checking Assumptions 
 ```{r}
-#| label: checking-assumptions
-# base  r residuals plots required to check the assumptions 
-par(mfrow = c(2,2))
-plot(kelp_model)
+#| label: creating-a-QQ-plot-to-check-normality 
+# base layer: gg-plot 
+ggplot(data = kelp, # using kelp data frame
+       # y-axis is kelp elongation rate (g) 
+       mapping = aes(sample = kelp_elong)) + 
+  # first layer: QQ reference line 
+  geom_qq_line(color = "lightgreen") + # coloring the line
+  # second layer: adding qq points 
+  geom_qq()
 ```
-My tests check the assumptions of fitting a linear model using the Residuals Vs Fitted, Q-Q Residuals, Scale-Location and Residuals vs. Leverage plots to test the homoscedasticity of residuals, the normality of the residuals, and the influence of outliers on the model. Based on the model, the residuals roughly fit the line on the QQ plot, with a small tails on the edge, however the majority of residuals lie upon the line allowing me to conclude that they are nationally distributed. Lastly, residuals are homoscedastic, as they are randomly distributed in both the Scale-location and Residuals vs Fitted graphs, and outliers do not strongly affect the model, as seen by the lack of major outliers on th residuals vs. leverage plot. 
+My tests check the assumptions of a Pearson's correlation test (linear relationship between variables, variables are continuous, variables are normally distributed, and there independent observations), and the assumptions of Spearman's  correlation test (monotonic relationship between variables (unidirectional), and that there are independent observations). In my tests, I checked the assumptions of normality and linearity between variables, the data collected in this study did contain independent observations and variables are continuous. According to the QQ plot, the data are roughly normal, as the points follow the reference line comparing sample quantiles to theoretical (normal) quantiles, with only slight variation on the tails, however the center of the data tightly follow the reference line. This satisfies the assumption of normality for the Pearson correlation test. Finally, according the the scatter plot generated, the data points follow a linear trajectory, and all points follow a clear unidirectional pattern, which satisfies the assumption of linearity for Pearson's correlation and the assumption of a monotonic relationship between variables for Spearman's correlation. 
 
 #### Running the Test 
 ```{r}
@@ -99,7 +81,7 @@ cor.test(kelp$kelp_elong, kelp$temp_c,
 
 ### d. Results communication
 
-To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson’s product-moment correlation because the data meets the assumptions of normality (as shown by the QQ residuals plot), we are observing a linear relationship between two continuous variables, and there are independent observations. We found a moderate negative relationship between ocean temperature and Giant Kelp Frond elongation rate (Pearson’s r = -0.688, 95% CI [-0.8359665, -0.4460157], t(30) = -5.189, p < 0.001, $\alpha$ = 0.05).
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson’s product-moment correlation because the data meets the assumptions of normality (as shown by the QQ plot), we are observing a linear relationship between two continuous variables, and there are independent observations. We found a moderate negative relationship between ocean temperature and Giant Kelp Frond elongation rate (Pearson’s r = -0.688, 95% CI [-0.8359665, -0.4460157], t(30) = -5.189, p < 0.001, $\alpha$ = 0.05).
 
 ### e. Test implications
 
