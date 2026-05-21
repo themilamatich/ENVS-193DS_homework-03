@@ -222,6 +222,10 @@ ggplot(data = my_data_clean2, # selecting the data frame
 
 ### a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences).
 
+An affective visualization for my personal data comparing step counts for weekend and weekday could be a mountain, where each mountain represents the maximum number of steps done on that day, and there will be a line or point in the middle to represent the mean/median number of steps taken on that day. Additionally, I would have myself hiking on the mountain to show myself moving throughout the week. I could also make the hills each day of the week, and be hiking across each day to show the variation across each individual day, and weekend and weekday can be a different color. 
+
+An affective visualization for my personal data comparing step counts with the daily high temperature is to do small footprints walking around the screen. Each footprint will have a different size or has a number on it, and then each foot will be a different gradient of red to represent the high temperature. Hopefully, then people can see how temperature is, or is not, influencing my step count based on the size and color of the foot print. 
+
 ### b. Create a sketch (on paper) of your idea.
 
 ### c. Make a draft of your visualization.
