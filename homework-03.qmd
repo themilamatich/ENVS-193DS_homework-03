@@ -71,7 +71,7 @@ ggplot(data = kelp, # data from kelp data set
                 y = predicted)) + # y = y in the data set
   # labeling x- and y-axes 
   labs(x = "Temperature (°C)", # x = "Temperature (°C)"
-       y = "Giant Kelp Frond Elongation Rate (cm~day^{-1})") + # y = elongation rate
+       y = "Giant Kelp Frond Elongation Rate (cm~day^{-1})") + # y = grow rate
   # changing theme to be different than he default 
   theme_minimal()
 ```
@@ -85,7 +85,7 @@ ggplot(data = kelp, # data from kelp data set
 par(mfrow = c(2,2))
 plot(kelp_model)
 ```
-My tests check the assumptions of fitting a linear model using the Residuals Vs Fitted, Q-Q Residuals, Scale-Location and Residuals vs. Leverage plots to test the homoscedasticity of residuals, the normality of the residuals, and the influence of outliers on the model. Based on the model, the residuals roughly fit the line on the QQ plot, with a small tails on the edge, however the majority of residuals lie upon the line allowing me to conclude that they are nationally distributed. Lastly, residuals are homoscedastic, as they are randomly distributed in both the Scale-location and Residuals vs Fitted graphs, and outliers do not storngly affect the model, as seen by the lack of major outliers on th resisudals vs. leverage plot. 
+My tests check the assumptions of fitting a linear model using the Residuals Vs Fitted, Q-Q Residuals, Scale-Location and Residuals vs. Leverage plots to test the homoscedasticity of residuals, the normality of the residuals, and the influence of outliers on the model. Based on the model, the residuals roughly fit the line on the QQ plot, with a small tails on the edge, however the majority of residuals lie upon the line allowing me to conclude that they are nationally distributed. Lastly, residuals are homoscedastic, as they are randomly distributed in both the Scale-location and Residuals vs Fitted graphs, and outliers do not strongly affect the model, as seen by the lack of major outliers on th residuals vs. leverage plot. 
 
 #### Running the Test 
 ```{r}
@@ -99,7 +99,7 @@ cor.test(kelp$kelp_elong, kelp$temp_c,
 
 ### d. Results communication
 
-To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson’s product-moment correlation because the data meets the assumptions of normality (as shown by the QQ residuals plot), we are observing a linear relationship between two continuous variables, and there are independent observations. We found a moderate negative relationship between ocean temperature and Giant Kelp Frond elongation rate (Pearson’s r = -0.688, 95% CI [ -0.8359665, -0.4460157], t(30) = -5.189, p < 0.001, $\alpha$ = 0.05).
+To evaluate the strength of the relationship between temperature and giant kelp frond elongation rate, I used a Pearson’s product-moment correlation because the data meets the assumptions of normality (as shown by the QQ residuals plot), we are observing a linear relationship between two continuous variables, and there are independent observations. We found a moderate negative relationship between ocean temperature and Giant Kelp Frond elongation rate (Pearson’s r = -0.688, 95% CI [-0.8359665, -0.4460157], t(30) = -5.189, p < 0.001, $\alpha$ = 0.05).
 
 ### e. Test implications
 
@@ -222,11 +222,11 @@ ggplot(data = my_data_clean2, # selecting the data frame
 
 ### a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences).
 
-An affective visualization for my personal data comparing step counts for weekend and weekday could be a mountain, where each mountain represents the maximum number of steps done on that day, and there will be a line or point in the middle to represent the mean/median number of steps taken on that day. Additionally, I would have myself hiking on the mountain to show myself moving throughout the week. I could also make the hills each day of the week, and be hiking across each day to show the variation across each individual day, and weekend and weekday can be a different color. 
-
-An affective visualization for my personal data comparing step counts with the daily high temperature is to do small footprints walking around the screen. Each footprint will have a different size or has a number on it, and then each foot will be a different gradient of red to represent the high temperature. Hopefully, then people can see how temperature is, or is not, influencing my step count based on the size and color of the foot print. 
+For my personal data, an effective visualization could be a mountain and hills created for each day to show how my step count fluctuates on each day of the week. My though process is that it will look like a a jitter plot, but the range of step counts with be the height of the mountain, and there will be a small point or difference colors/shaded area in the middle that represents the mean or median steps done on that given day of the week. In order to differentiate the weekend vs weekday number of steps taken, I will have lose mountains be different colors, or a different biome. Finally, I will have a little photo of myself "climbing" the mountains to represent myself moving throughout the week. 
 
 ### b. Create a sketch (on paper) of your idea.
+
+** do I do one or like does it have to be ??? just one ! 
 
 ### c. Make a draft of your visualization.
 
