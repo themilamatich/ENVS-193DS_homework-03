@@ -220,6 +220,11 @@ For my personal data, an effective visualization could be a mountain and hills c
 
 ### a. Revisit and summarize
 
+The author is addressing the relative importance of differing coral species in fostering fish communities, and evaluating whether sampling scale or coral colony size affected the fish's relationship with the habitat. In order to answer this question, the author is running tests to determine how the coral structures affect the relative fish abundance and diversity in the community. The test that I have selected to give a statistical critique on was the ANOVA. In this case, the response variables were fish species richness and total abundance, and the predictor variable in both cases is coral species.
+
+#### Fish abundance and Species Richness Figures
+![](abundance-richness-new.png)
+
 ### b. Visual clarity
 
 ### c. Aesthetic clarity
