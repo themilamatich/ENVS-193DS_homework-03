@@ -2,7 +2,12 @@
 title: "homework-03"
 author: "Mila Matich"
 date: 2026-05-28
-format: pdf
+format:
+  pdf:
+    toc: true # use this to display a table of contents
+execute:
+  message: false # use this to make sure messages don't show up
+  warning: false # use this to make sure warnings don't show up
 ---
 
 # Part 1. Homework Set Up
