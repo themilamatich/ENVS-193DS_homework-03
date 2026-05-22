@@ -235,7 +235,7 @@ I believe the authors did a good job is handling visual clutter as there is not 
 
 ### d. Recommendations
 
-
+One large recommendation I have is to make the data bars a different color than the error bars. At first glance, the error bars are hard to see and blend in with teh data bars. Additionally, changing the font size to be slightly smaller than the figure and balancing out the text to figure ratio may be more visually pleasing and easier to read. Lastly, if I was being really nit picky, I would remove the letters about each graph and leave the statistical interpretation to the results section, or develop another way to show which groups have a statistical difference. At first glance, the letters are hard to interpret and adds to the visual clutter when it can be just described in the written portion of the paper. 
 
 
 
