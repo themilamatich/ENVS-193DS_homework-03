@@ -231,6 +231,8 @@ The authors visually represent their statistics through their y-axis labels whic
 
 ### c. Aesthetic clarity
 
+I believe the authors did a good job is handling visual clutter as there is not a lot of clutter on the figure pages (ie. no grid lines and no unnecessary tick marks). That being said, they have a good data:ink ratio, where there is enough ink to accurately describe the relationships that are being described, and do not use too much to over complicate the graphs. In my eyes, it is a very basic, minimal visual interpretation of the data and labels are only included when necessary. 
+
 ### d. Recommendations
 
 
