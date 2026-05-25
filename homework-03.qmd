@@ -209,21 +209,23 @@ ggplot(data = my_data_clean2, # selecting the data frame
 
 ### a. Describe in words what an affective visualization could look like for your personal data (3-5 sentences).
 
-For my personal data, an effective visualization could be a mountain and hills created for each day to show how my step count fluctuates on each day of the week. My though process is that it will look like a a jitter plot, but the range of step counts with be the height of the mountain, and there will be a small point or difference colors/shaded area in the middle that represents the mean or median steps done on that given day of the week. In order to differentiate the weekend vs weekday number of steps taken, I will have lose mountains be different colors, or a different biome. Finally, I will have a little photo of myself "climbing" the mountains to represent myself moving throughout the week. 
+For my personal data, an affective visualization could be a bar like visualization where each line would represent a day. The color of the bar would be determined by my stress or the amount of homework that I have each day (where high is dark blue, medium is brown, and low is light gray), then darkly shaded in is the height of the bar that represents how many steps I took that day. There will hopefully be a gradient showing the number of steps and how stressed I have been, and maybe a relationship you can see across the two. I can also add and additional layer where the outlined bars represent weekends, to add in my comparison of weekend and weekday. 
 
 ### b. Create a sketch (on paper) of your idea.
 
-![](visual-draft.png)
+![](visual-draft2.png)
 
 ### c. Make a draft of your visualization.
 
-![](personal research project .png)
+![](affective-vis.png)
 
 ### d. Write an artist statement.
 
-My piece shows how my step count differs on each day of the week, where the humps on my hill represent an individual day (Monday, Tuesday, etc.), and the red dot in the center represents the average for that day. I plan to create this project by hand with a collage of all of my photos of things I have done on each day of the week because I have always loved collages. This digital version is a draft of what my piece will look like when I recreate it on paper. 
+My piece shows how my step count differs each day depending on how much homework I have each day. The height of the darker bar represents my step count, while the color fo the line itself represents one day and the amount of homework I had that day, where light gray is low (less than 4 assignments), brown is medium (4-7 assignments), and dark navy is high (more than 7 assignments). This project has inspiration from Lorraine Woodruff-Long’s warming strips quilt along with the blankets people make to keep track of their mood. My project combines with idea with a separate visualization to represent my step count in edition to my daily homework amounts to make show a relationship between the two. 
 
 ### e. Prep your materials to share in class.
+
+[View Slides](https://docs.google.com/presentation/d/1gBSKbgazp7y5gV4DWkFhraboy0ph_QNkMgZzGLjpKVg/edit?usp=sharing)
 
 ## Problem 4. Statistical critique
 
