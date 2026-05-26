@@ -43,7 +43,7 @@ In our study, we are trying to measure the strength of the relationship between 
 #| label: generating-linear-regression-model 
 
 # generating the visualization
-# base layer: ggplot 
+# base layer is ggplot 
 ggplot(data = kelp, # data from kelp data set
        mapping = aes(x = temp_c, # x-axis = temp 
                      y = kelp_elong)) + # y-axis = growth rate 
