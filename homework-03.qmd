@@ -24,9 +24,9 @@ library(readxl) # loading in readxl
 library(ggeffects) # loading in ggeffects 
 
 # reading in and storing data as object "kelp"
-kelp <- read_csv("data/temp-kelp.csv") # data/ in order to direct the file path 
+kelp <- read_csv("data/temp-kelp.csv") # data/: directs the file path 
 # reading in and storing personal data as object "personal"
-my_data <- read_csv("data/personal-data.csv") # data/ in order to direct the file path 
+my_data <- read_csv("data/personal-data.csv") # data/: directs the file path 
 ```
 
 # Part 2. Problems 
@@ -81,7 +81,7 @@ My tests check the assumptions of a Pearson's correlation test (linear relations
 # running a correlation test 
 # formula: (data frame$response, data frame$predictor)
 cor.test(kelp$kelp_elong, kelp$temp_c, 
-         method = "pearson") # type of test: pearson (normal residuals from QQ)
+         method = "pearson") # type of test: pearson(normal residuals from QQ)
 ```
 
 ### d. Results communication
@@ -156,7 +156,7 @@ my_data_clean2 <- my_data |>
 
 # fitting the linear model to generate the ribbon + linear line 
 my_data_model <- lm(
-  step_count ~ high_temperature_o_f, # formula: step count as a function of temp
+  step_count ~ high_temperature_o_f, # formula: steps as a function of temp
   data = my_data_clean2) # data from the kelp data set 
 
 # generating predictor values for the linear model + ribbon 
