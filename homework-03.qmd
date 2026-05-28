@@ -51,9 +51,9 @@ ggplot(data = kelp, # data from kelp data set
   geom_point(size = 3,# changing point size 
              fill = "darkgreen", # adding data points in the color green
              shape = 21) + # point shape = circles 
-  # labeling x- and y-axes 
+  # labeling x- and y-axes ( x = temp, y = elongation rate)
   labs(x = "Temperature (°C)", # x = "Temperature (°C)"
-       y = "Giant Kelp Frond Elongation Rate (cm\U00B2/day)") + # y = grow rate
+       y = expression("Giant Kelp Frond Elongation Rate (cm day"^-1*")")) + 
   # changing theme to be different than he default 
   theme_minimal()
 ```
@@ -90,7 +90,7 @@ To evaluate the strength of the relationship between temperature and giant kelp 
 
 ### e. Test implications
 
-Our tests suggest that as ocean temperature increases, the growth rate of Giant Kelp decreases. In regards to Giant Kelp health and prosperity, it is important to continue to monitor these postulation in order to determine if temperature is affecting anything else, other than their growth rate. Such research is extremely important due to rising global temperatures in our oceans, and we must work towards accommodating these species who are negatively affected by the rising ocean temperatures such as assisted kelp kelp restoration and monitoring growth rates in warmer climates. 
+Our tests suggest that as ocean temperature increases, the growth rate of Giant Kelp decreases. In regards to Giant Kelp health and prosperity, it is important to continue to monitor these populations in warmer water conditions to understand how rising global ocean temperature is affecting the Giant Kelp. Expanding research on temperature implications on the species, along with possible intervention strategies such as removal into colder waters can be explored in order to accommodate these species who are being negatively affected, in order to accurately inform conservation efforts.
 
 ### f. Double check your own work.
 
@@ -222,7 +222,7 @@ For my personal data, an affective visualization could be a bar like visualizati
 
 ### d. Write an artist statement.
 
-My piece shows how my step count differs each day depending on how much homework I have each day. The height of the darker bar represents my step count, while the color fo the line itself represents one day and the amount of homework I had that day, where light gray is low (less than 4 assignments), brown is medium (4-7 assignments), and dark navy is high (more than 7 assignments). This project has inspiration from Lorraine Woodruff-Long’s warming strips quilt along with the blankets people make to keep track of their mood, however in this case I overlay visualizations to represent my step count along with to my daily homework amounts to make show a relationship between the two. I plant to recreate this piece using paint and a canvas rather than just markers on a small piece of paper, and displays at least 40 days of data, which in turn leads to painting 40 lines.  
+My piece shows how my step count differs each day depending on how much homework I have each day. The height of the darker bar represents my step count, while the color of the line itself represents one day and the amount of homework I had that day, where light gray is low (less than 4 assignments), brown is medium (4-7 assignments), and dark navy is high (more than 7 assignments). This project has inspiration from Lorraine Woodruff-Long’s warming strips quilt along with the blankets people make to keep track of their mood, however in this case I overlay visualizations to represent my step count along with my daily homework amounts to make show a relationship between the two. I plan to recreate this piece using paint and a canvas rather than just markers on a small piece of paper, and displays at least 40 days of data, which in turn leads to painting 40 lines.  
 
 ### e. Prep your materials to share in class.
 
@@ -239,7 +239,7 @@ The author is addressing the relative importance of differing coral species in f
 
 ### b. Visual clarity
 
-The authors visually represent their statistics through their y-axis labels which clearly indicates that the bars represent the mean abundance or richness +/- the standard error (which is also shown in the figure with error bars overlapping the bars). These labels are in logical positions, and teh graph does not show any underlying data or model predictions. Additionally, they show the results of the statistical tests using A.B,C, which denotes whether there is statistical difference between groups (which was determined by the ANOVA they ran). Bars with shared letters indicate no significant difference in both plots, while bars without shared letters indicate a significant difference in the variable described on the y-axis. 
+The authors visually represent their statistics through their y-axis labels which clearly indicates that the bars represent the mean abundance or richness +/- the standard error (which is also shown in the figure with error bars overlapping the bars). These labels are in logical positions, and the graph does not show any underlying data or model predictions. Additionally, they show the results of the statistical tests using A.B,C, which denotes whether there is statistical difference between groups (which was determined by the ANOVA they ran). Bars with shared letters indicate no significant difference in both plots, while bars without shared letters indicate a significant difference in the variable described on the y-axis. 
 
 ### c. Aesthetic clarity
 
