@@ -192,7 +192,7 @@ ggplot(data = my_data_clean2, # selecting the data frame
   # relabel x- and y-axes, legend title (still want title?)
   labs(x = "Daily High Temperature (°F)",
        y = "Daily Step Count",
-       title = "Daily Step Counts Vary with the Daily High Temperature",
+       title = "Daily Step Counts not Affected by Daily High Temperature",
        subtitle = "2026-05-20") +
   # custom themes
   theme_light()
@@ -206,7 +206,7 @@ ggplot(data = my_data_clean2, # selecting the data frame
 
 #### Caption for "Daily Step Counts Vary with the Daily High Temperature"
 
-**Figure 2. Daily step count slightly varies with the Daily High Temperature.** Red dots represents the number of steps taken under a certain daily high temperature. Pink ribbon represents the 95% confidence interval, and the black line represents the line of best fit. Data collected by Mila Matich from 2026-04-21 to 2026-05-20
+**Figure 2. Daily high temperature does not influence daily step count.** Red dots represents the number of steps taken under a certain daily high temperature. Pink ribbon represents the 95% confidence interval, and the black line represents the line of best fit. Data collected by Mila Matich from 2026-04-21 to 2026-05-20
 
 ## Problem 3. Affective visualization
 
