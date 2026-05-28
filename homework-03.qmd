@@ -20,13 +20,14 @@ execute:
 # loading in packages
 library(tidyverse) # loading in tidyverse 
 library(janitor) # loading in janitor 
+library(here) # loading in here for file/folder organization
 library(readxl) # loading in readxl
 library(ggeffects) # loading in ggeffects 
 
 # reading in and storing data as object "kelp"
-kelp <- read_csv("data/temp-kelp.csv") # data/: directs the file path 
+kelp <- read_csv(here("data", "temp-kelp.csv")) # using here package
 # reading in and storing personal data as object "personal"
-my_data <- read_csv("data/personal-data.csv") # data/: directs the file path 
+my_data <- read_csv(here("data","personal-data.csv")) # using here package
 ```
 
 # Part 2. Problems 
