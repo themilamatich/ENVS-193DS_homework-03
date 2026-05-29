@@ -1,10 +1,11 @@
 ---
-title: "homework-03"
+title: "ENVS 193DS Homework 3"
 author: "Mila Matich"
 date: 2026-05-28
 format:
   pdf:
     toc: true # use this to display a table of contents
+    toc-location: left # floating table of contents to the left 
 execute:
   message: false # use this to make sure messages don't show up
   warning: false # use this to make sure warnings don't show up
@@ -49,20 +50,20 @@ ggplot(data = kelp, # data from kelp data set
        mapping = aes(x = temp_c, # x-axis = temp 
                      y = kelp_elong)) + # y-axis = growth rate 
   # first layer: geom_point 
-  geom_point(size = 3,# changing point size 
+  geom_point(size = 3, # changing point size 
              fill = "darkgreen", # adding data points in the color green
              alpha = 0.4, # making points opaque 
              shape = 21) + # point shape = circles 
-  # labeling x- and y-axes ( x = temp, y = elongation rate)
+  # labeling x- and y-axes (x = temp, y = elongation rate)
   labs(x = "Temperature (°C)", # x = "Temperature (°C)"
        y = expression("Giant Kelp Frond Elongation Rate (cm day"^-1*")")) + 
-  # changing theme to be different than he default 
+  # changing theme to be different than the default 
   theme_minimal()
 ```
 
 ### c. Check your assumptions and run your test
 
-#### Checking Assumptions 
+#### Checking my Assumptions 
 ```{r}
 #| label: creating-a-QQ-plot-to-check-normality 
 # base layer: gg-plot 
@@ -74,7 +75,7 @@ ggplot(data = kelp, # using kelp data frame
   # second layer: adding qq points 
   geom_qq()
 ```
-My tests check the assumptions of a Pearson's correlation test (linear relationship between variables, variables are continuous, variables are normally distributed, and there independent observations), and the assumptions of Spearman's  correlation test (monotonic relationship between variables (unidirectional), and that there are independent observations). In my tests, I checked the assumptions of normality and linearity between variables, the data collected in this study did contain independent observations and variables are continuous. According to the QQ plot, the data are roughly normal, as the points follow the reference line comparing sample quantiles to theoretical (normal) quantiles, with only slight variation on the tails, however the center of the data tightly follow the reference line. This satisfies the assumption of normality for the Pearson correlation test. Finally, according the the scatter plot generated in part 1b, the data points follow a linear trajectory, and all points follow a clear unidirectional pattern, which satisfies the assumption of linearity for Pearson's correlation and the assumption of a monotonic relationship between variables for Spearman's correlation. 
+My tests check the assumptions of a Pearson's correlation test (linear relationship between variables, variables are continuous, variables are normally distributed, and there independent observations), and the assumptions of Spearman's  correlation test (monotonic relationship between variables (unidirectional), and that there are independent observations). Through QQ plots and a scatter plots, I checked the assumptions of normality and linearity between variables and concluded that the data are roughly normal, as the points follow the reference line comparing sample quantiles to theoretical (normal) quantiles, with only slight variation on the tails (which meets the assumption of normality for Pearsons), the data are also continuous variables and have independent observations. According the the scatter plot generated in part 1b, the data points follow a linear trajectory, and all points follow a clear unidirectional pattern, which satisfies the assumption of linearity for Pearson's correlation and the assumption of a monotonic relationship between variables for Spearman's correlation. 
 
 #### Running the Test 
 ```{r}
@@ -92,7 +93,7 @@ To evaluate the strength of the relationship between temperature and giant kelp 
 
 ### e. Test implications
 
-Our tests suggest that as ocean temperature increases, the growth rate of Giant Kelp decreases. In regards to Giant Kelp health and prosperity, it is important to continue to monitor these populations in warmer water conditions to understand how rising global ocean temperature is affecting the Giant Kelp. Expanding research on temperature implications on the species, along with possible intervention strategies such as removal into colder waters can be explored in order to accommodate these species who are being negatively affected, in order to accurately inform conservation efforts.
+Our tests suggest a moderate negative relationship between ocean temperature and Giant Kelp growth rates, meaning that as ocean temperature increases, the growth rate of Giant Kelp decreases. With regard to Giant Kelp health and prosperity, it is important to continue to monitor these populations in warmer water conditions to understand how rising ocean temperature is affecting the Giant Kelp in the long term. Expanding research on the effects of temperature on this species, along with possible intervention strategies such as relocation into colder waters, can be explored in order to accommodate these species who are being negatively affected and to accurately inform conservation efforts.
 
 ### f. Double check your own work.
 
@@ -105,7 +106,7 @@ cor.test(kelp$kelp_elong, kelp$temp_c,
          method = "spearman") # type of test: spearman rank correlation
 ```
 
-The two tests would have led me to the same conclusion, which was to reject the null hypothesis and infer that there is a moderate negative correlation between ocean temperature and Giant Kelp Frond elongation rate (Spearman $\rho$ = -0.689, S = 9216.1, p < 0.001, $\alpha$ = 0.05). Despite gathering the same conclusion and results, the two tests are different in what they are comparing. The Pearson’s product-moment correlation compares continuous variables and is the parametric version of a correlation test and a Spearman’s rank correlation compares ranks and is the non-parametric version of a correlation test. 
+The two tests would have led me to the same conclusion, which was to reject the null hypothesis and conclude that there is a moderate negative correlation between ocean temperature and Giant Kelp Frond elongation rate (Spearman $\rho$ = -0.689, S = 9216.1, p < 0.001, $\alpha$ = 0.05). Despite gathering the same conclusion and results, the two tests are different in what they are comparing. The Pearson’s product-moment correlation compares continuous variables and is the parametric version of a correlation test and a Spearman’s rank correlation compares ranks and is the non-parametric version of a correlation test. 
 
 ## Problem 2. Personal data
 
@@ -144,7 +145,11 @@ ggplot(data = my_data_clean,
   scale_color_manual(values = c("Weekday" = "#FFD166", 
                                 "Weekend" = "lightblue")) + 
   # removing the legend
-  theme(legend.position = "none")
+  theme(legend.position = "none", 
+        panel.background = element_rect(fill = "white", # blank background
+                                        colour = "black", # black border
+                                        linewidth = 1), # border width)
+        panel.grid = element_blank()) # getting rid of gridlines 
 
 ```
 
@@ -202,7 +207,7 @@ ggplot(data = my_data_clean2, # selecting the data frame
 
 #### Caption for "Number of Steps Taken differs on Weekday vs. Weekend"
 
-**Figure 1. Number of steps taken differs on Weekday versus weekend.** Small circular points represent the total number of steps recorded on given weekday (yellow points) or weekend (blue points) from 2026-04-21 to 2026-05-20. Box plots represent median number of steps taken. The box itself represents the interquartile range, the horizontal line in the center represents the median number of steps taken on each day type, and the whiskers extend to the 1.5 x the IQR, while anything outside that range is an outlier. Data collected by Mila Matich from 2026-04-21 to 2026-05-20.
+**Figure 1. Number of steps taken differs on Weekday versus weekend.** Small circular points represent the total number of steps recorded on a given weekday (yellow points) or weekend (blue points) from 2026-04-21 to 2026-05-20. Box plots represent median number of steps taken. The box itself represents the interquartile range, the horizontal line in the center represents the median number of steps taken on each day type, and the whiskers extend to the 1.5 x the IQR, while anything outside that range is an outlier. Data collected by Mila Matich from 2026-04-21 to 2026-05-20.
 
 #### Caption for "Daily Step Counts Vary with the Daily High Temperature"
 
@@ -212,7 +217,7 @@ ggplot(data = my_data_clean2, # selecting the data frame
 
 ### a. Describe in words what an affective visualization could look like for your personal data.
 
-For my personal data, an affective visualization could be a bar like visualization where each line would represent a day. The color of the bar would be determined by my stress or the amount of homework that I have each day (where high is dark blue, medium is brown, and low is light gray), then darkly shaded in is the height of the bar that represents how many steps I took that day. There will hopefully be a gradient showing the number of steps and how stressed I have been, and maybe a relationship you can see across the two. I can also add and additional layer where the outlined bars represent weekends, to add in my comparison of weekend and weekday. 
+For my personal data, an affective visualization could be a bar like visualization where each line would represent a day. The color of the bar would be determined by my stress or the amount of homework that I have each day (where high is dark blue, medium is brown, and low is light gray), then darkly shaded in is the height of the bar that represents how many steps I took that day. There will hopefully be a gradient showing the number of steps and how much homework I have had, and maybe a relationship you can see across the two. I can also add and additional layer where the outlined bars represent weekends, to add in my comparison of weekend and weekday. 
 
 ### b. Create a sketch (on paper) of your idea.
 
@@ -224,7 +229,7 @@ For my personal data, an affective visualization could be a bar like visualizati
 
 ### d. Write an artist statement.
 
-My piece shows how my step count differs each day depending on how much homework I have each day. The height of the darker bar represents my step count, while the color of the line itself represents one day and the amount of homework I had that day, where light gray is low (less than 4 assignments), brown is medium (4-7 assignments), and dark navy is high (more than 7 assignments). This project has inspiration from Lorraine Woodruff-Long’s warming strips quilt along with the blankets people make to keep track of their mood, however in this case I overlay visualizations to represent my step count along with my daily homework amounts to make show a relationship between the two. I plan to recreate this piece using paint and a canvas rather than just markers on a small piece of paper, and displays at least 40 days of data, which in turn leads to painting 40 lines.  
+My piece shows how my step count differs each day depending on how much homework I have each day taking inspiration from Lorraine Woodruff-Long’s warming strips quilt along with the blankets people make to keep track of their mood, however in this case I overlay visualizations to represent my step count along with my daily homework amounts to show a relationship between the two. The height of the darker bar represents my step count, while the color of the line itself represents one day and the amount of homework I had that day, where light gray is low (less than 4 assignments), brown is medium (4-7 assignments), and dark navy is high (more than 7 assignments). I plan to recreate this piece using paint and a canvas rather than just markers on a small piece of paper, and displays at least 40 days of data, which in turn leads to painting 40 lines.  
 
 ### e. Prep your materials to share in class.
 
