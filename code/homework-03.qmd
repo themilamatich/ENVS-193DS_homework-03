@@ -134,7 +134,7 @@ ggplot(data = my_data_clean,
   # second layer: jitter plot
   geom_jitter(height = 0, # making sure points don't move along y-axis
               width = 0.2) + # narrowing width of jitter
-  # labeling x-axis, y-axis, and adding a title
+  # labeling x-axis, y-axis, and adding a title/subtitle
   labs(x = "Weekday or Weekend", 
        y = "Daily Step Count", 
        title = "Number of Steps Taken differs on Weekday vs. Weekend",
@@ -144,8 +144,8 @@ ggplot(data = my_data_clean,
   # assigning colors based on category 
   scale_color_manual(values = c("Weekday" = "#FFD166", 
                                 "Weekend" = "lightblue")) + 
-  # removing the legend
-  theme(legend.position = "none", 
+  # editing theme elements to remove visual clutter
+  theme(legend.position = "none", # removing the legend
         panel.background = element_rect(fill = "white", # blank background
                                         colour = "black", # black border
                                         linewidth = 1), # border width)
@@ -169,7 +169,7 @@ my_data_model <- lm(
 
 # generating predictor values for the linear model + ribbon 
 my_data_preds <- ggpredict(
-  my_data_model,     # model object
+  my_data_model,  # model object
   terms = "high_temperature_o_f")  # predictor (in quotation marks)
 
 # generating the plot 
@@ -194,7 +194,7 @@ ggplot(data = my_data_clean2, # selecting the data frame
   geom_line(data = my_data_preds, # data from predicted data set 
             aes(x = x, # x = x in the data set
                 y = predicted)) + # y = y in the data set
-  # relabel x- and y-axes, legend title (still want title?)
+  # relabel x- and y-axes, title and subtitle
   labs(x = "Daily High Temperature (°F)",
        y = "Daily Step Count",
        title = "Daily Step Counts not Affected by Daily High Temperature",
